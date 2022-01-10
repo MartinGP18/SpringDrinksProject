@@ -38,13 +38,13 @@ public class DrinkController {
 		return new ResponseEntity<List<Drink>>(this.service.getAll(), HttpStatus.FOUND);
 	}
 	
-	@GetMapping("/readByID/{id}")
+	@GetMapping("/readById/{id}")
 	public ResponseEntity<Drink> readDrinkById(@PathVariable long id) {
 		return new ResponseEntity<Drink>(this.service.getById(id), HttpStatus.FOUND);
 	}
 	
-	@PutMapping("/update/{id}")
-	public ResponseEntity<Drink> updateDrink(@PathVariable long id, @RequestBody Drink drink) {
+	@PutMapping("/updateDrinkById/{id}")
+	public ResponseEntity<Drink> updateDrinkById(@PathVariable long id, @RequestBody Drink drink) {
 		return new ResponseEntity<Drink>(this.service.update(id, drink), HttpStatus.ACCEPTED);
 	}
 	
